@@ -1,0 +1,282 @@
+#home{
+  &{ overflow: hidden; }
+  .animated{ animation-duration: 0.35s; } 
+  &>.item{ 
+    &{ @include posFull();box-shadow: 0 0 3px rgb(180, 180, 180);overflow: auto;-webkit-overflow-scrolling: touch;background-color: rgb(230, 196, 144); }
+    &.animated{ animation-duration: 0.35s; }
+  }
+
+  &>.mask{
+    @include posFull();background-color: #ffffff;z-index: 1000;
+  }
+  
+
+  #operate{
+    &{ @include posFull();  }
+    &>.mask{
+      &{ background: black;
+        // background: -webkit-radial-gradient(closest-side, rgba(0, 0, 0, 0.6), black);
+        @include posFull();transition: all 5s; }
+    }
+    &>.operate{
+      &{ @include posFull(); }
+      .next{ @include backgroundImg($operate_next);width: px2rem(108px);height: px2rem(56px);display: inline-block;position: absolute;top: px2rem(17px);right: px2rem(19px); }
+      .back{ @include backgroundImg($operate_back);width: px2rem(95px);height: px2rem(93px);display: inline-block;position: absolute;bottom: px2rem(12px);left: px2rem(29px); }
+      
+      .start{ 
+        &{ @include backgroundImg($lighterHand);width: px2rem(140px);height: px2rem(143px);display: inline-block;position: absolute;bottom: 0;right: 0;background-position-y: bottom;  }
+
+        &>.fire{ position: absolute;bottom: px2rem(40px);right: px2rem(92px);z-index: 100; }
+
+        a>img{ display: inline-block;position: absolute;top: px2rem(-4px);right: 0;width: px2rem(93px);height: px2rem(93px);transform-origin: px2rem(65px) px2rem(49px);animation-duration: 0.2s }
+      }
+    }
+  }
+
+
+  #mao{
+    $zIndex: 60;
+    &{ z-index: $zIndex; }
+    &>.text{
+      &{ position: absolute;top: px2rem(20px);left: px2rem(10px);z-index: 20; }
+      dl.animated{ animation-duration: 1s; }
+      dl>img{ width: 100%; }
+      dl:nth-of-type(1){ width: px2rem(189px); }
+      dl:nth-of-type(2){ width: px2rem(299px);position: relative;top: px2rem(-14px); }
+      dl:nth-of-type(3){ width: px2rem(299px);position: relative;top: px2rem(-26px); }
+    }
+    &>.sky{
+      &{ @include hbgImg($mao_sky); }
+      &>.flag{ @include hbgImg($mao_flag, px2rem(23px)); }
+      &>.mountain{ @include hbgImg($mao_mountain, px2rem(50px)); }
+    }
+    &>.sence{
+      &{ @include posFull(); }
+      &>.crowd{ @include hbgImg($mao_crowd, 'bottom');bottom: px2rem(42px); }
+      &>.role{ 
+        &{ position: absolute;top: px2rem(200px);left: px2rem(120px);z-index: $zIndex;width: px2rem(110px); height: px2rem(313px);@include backgroundImg($mao_role0); }
+
+        &>img.hand{ display: inline-block;position: absolute;top: px2rem(50px);right: px2rem(10px);width: px2rem(97px);height: px2rem(66px);transform-origin: px2rem(14px) px2rem(19px); }
+        
+        &>img.head{
+          display: inline-block;position: absolute;top: px2rem(10px);right: px2rem(10px);width: px2rem(97px);height: px2rem(66px);transform-origin: px2rem(14px) px2rem(19px);
+        }
+      }
+
+      &>.mike{ @include hbgImg($mao_mike, 'bottom');bottom: px2rem(73px);background-size: px2rem(96px 272px);background-position-x: px2rem(238px); }
+    }
+
+    &>.drag{ @include hDrag($mao_paper, px2rem(40px), px2rem(40px));z-index: $zIndex + 5;top: px2rem(56px);left: px2rem(258px); }
+    
+    &>.match{ position: absolute;border: 1px solid transparent;z-index: $zIndex + 5;top: px2rem(228px);left: px2rem(208px);width: px2rem(40px);height: px2rem(40px);@include backgroundImg($mao_rect);background-size: 100% 100%; }
+  }
+  #soldier{
+    $zIndex: 80;
+    &{ z-index: $zIndex; }
+    &>.text{
+      &{ position: absolute;top: px2rem(34px);left: px2rem(10px);z-index: $zIndex + 10; }
+      dl.animated{ animation-duration: 1s; }
+      dl>img{ width: 100%; }
+      dl:nth-of-type(1){ width: px2rem(189px); }
+      dl:nth-of-type(2){ width: px2rem(189px);position: relative;top: px2rem(-10px); }
+      dl:nth-of-type(3){ width: px2rem(299px);position: relative;top: px2rem(-26px); }
+    }
+    &>.sky{
+      &{ @include hbgImg($soldier_sky); }
+      &>.mountain{ @include hbgImg($soldier_mountain, 0); }
+    }
+    &>.sence{
+      &{ @include posFull(); }
+      &>.gress-1{ @include hbgImg($soldier_gress0, px2rem(200px)); }
+      &>.crowd{ @include hbgImg($soldier_crowd, 'bottom');bottom: px2rem(35px); }
+      &>.role{ 
+        &{ position: absolute;top: px2rem(200px);left: px2rem(140px);z-index: $zIndex;width: px2rem(161px); height: px2rem(297px);@include backgroundImg($soldier_role0); } 
+        
+        img.leg{ display: inline-block;position: absolute;bottom: 0;right: px2rem(18px);width: px2rem(73px);height: px2rem(113px);transform-origin: px2rem(18px) px2rem(14px);animation-duration: 0.4s }
+
+        img.hand{ display: inline-block;position: absolute;top: px2rem(50px);left: 0;width: px2rem(48px);height: px2rem(118px);transform-origin: px2rem(45px) px2rem(14px);animation-duration: 0.4s }
+
+        span{ 
+          &{ display: inline-block;position: absolute;top: px2rem(50px);left: 0;width: px2rem(48px);height: px2rem(118px);background-color: rgba(181, 180,180, 0.5); }
+  
+          &>i{ display: inline-block;border: 1px solid #ffffff;position: absolute;top: 0;left: 0; }
+        }
+      }
+      &>.gress-2{ @include hbgImg($soldier_gress1, 'bottom');bottom: px2rem(5px); }
+    }
+    &>.drag{ 
+      &{ @include hDrag($soldier_flag, px2rem(103px), px2rem(75px));z-index: $zIndex + 5;top: px2rem(20px);left: px2rem(30px); }
+      &>i{ border: 1px solid transparent;display: inline-block;position: absolute;bottom: px2rem(6px);left: px2rem(2px); }
+    }
+    &>.match{ position: absolute;border: 1px solid transparent;z-index: $zIndex + 5;top: px2rem(192px);left: px2rem(4px);width: px2rem(103px);height: px2rem(75px);@include backgroundImg($soldier_rect);background-size: 100% 100%; }
+  }
+  #meeting{
+    $zIndex: 70;
+    &{ z-index: $zIndex; }
+    &>.text{
+      &{ position: absolute;top: px2rem(34px);left: px2rem(10px);z-index: 20; }
+      dl.animated{ animation-duration: 1s; }
+      dl>img{ width: 100%; }
+      dl:nth-of-type(1){ width: px2rem(189px); }
+      dl:nth-of-type(2){ width: px2rem(299px);position: relative;top: px2rem(-14px); }
+      dl:nth-of-type(3){ width: px2rem(299px);position: relative;top: px2rem(-26px); }
+    }
+
+    &>.sky{
+      &{ @include hbgImg($meeting_sky); }
+      &>.plane{ @include hbgImg($meeting_plane, px2rem(16px));background-size: px2rem(211px 124px);background-position-x: px2rem(-40px); }
+      &>.mountain{ @include hbgImg($meeting_land, 'bottom'); }
+    }
+    &>.sence{
+      &{ @include posFull(); }
+      &>.stone{ @include hbgImg($meeting_stone, px2rem(60px)); }
+      &>.flag{ @include hbgImg($meeting_flag, px2rem(122px));background-size: px2rem(207px 271px);background-position-x: px2rem(51px); }
+      &>.crowd{ @include hbgImg($meeting_crowd, px2rem(320px)); }
+
+      &>.role-0{ @include hbgImg($meeting_role0, px2rem(300px));background-size: px2rem(116px 172px);background-position-x: px2rem(17px); }
+
+      &>.role-1{ 
+        &{ position: absolute;top: px2rem(390px);left: px2rem(325px);z-index: $zIndex;width: px2rem(40px); height: px2rem(89px);@include backgroundImg($meeting_role1); } 
+        
+        img{ display: inline-block;position: absolute;bottom: px2rem(68px);right: px2rem(-6px);width: px2rem(70px);height: px2rem(83px);transform-origin: px2rem(51px) px2rem(64px);animation-duration: 0.25s; }
+      }
+    }
+    #operate>.operate .start{ z-index: $zIndex + 10; }
+
+    &>.drag{ 
+      &{ @include hDrag($meeting_drag, px2rem(103px), px2rem(164px));z-index: $zIndex + 5;top: px2rem(68px);left: px2rem(240px);background-position-y: bottom;transform: rotate(40deg);transition: transform 0.6s; }
+
+      &.correct{ transform: rotate(0deg); }
+
+      &>img{ display: inline-block;position: absolute;top: 0;right: px2rem(-4px);width: px2rem(111px);height: px2rem(88px);transform-origin: px2rem(96px) px2rem(74px);animation-duration: 0.25s; }
+
+      &>i{ border: 1px solid transparent;display: inline-block;position: absolute;bottom: px2rem(6px);left: px2rem(2px); }
+    }
+
+    &>.match{ position: absolute;border: 1px solid transparent;z-index: $zIndex + 3;top: px2rem(309px);left: px2rem(201px);width: px2rem(103px);height: px2rem(164px);@include backgroundImg($meeting_rect);background-size: px2rem(70px) px2rem(136px);background-position: right bottom; }
+  }
+
+  #party{
+    $zIndex: 90;
+    &{ z-index: $zIndex; }
+    &>.text{
+      &{ position: absolute;top: px2rem(34px);left: px2rem(10px);z-index: 20; }
+      dl.animated{ animation-duration: 1s; }
+      dl>img{ width: 100%; }
+      dl:nth-of-type(1){ width: px2rem(189px); }
+      dl:nth-of-type(2){ width: px2rem(189px);position: relative;top: px2rem(-14px); }
+      dl:nth-of-type(3){ width: px2rem(299px);position: relative;top: px2rem(-30px); }
+    }
+    &>.sky{
+      &{ @include hbgImg($party_sky); }
+      &>.land{ @include hbgImg($party_land, px2rem(126px)); }
+      &>.plane{ @include hbgImg($party_plane, px2rem(30px));background-size: px2rem(156px 79px);background-position-x: px2rem(40px); } 
+    }
+    &>.sence{
+      &{ @include posFull(); }
+      &>.house{ @include hbgImg($party_house, px2rem(70px));background-size: px2rem(238px 249px);background-position-x: px2rem(136px); }
+
+      &>.boat{ @include hbgImg($party_boat, px2rem(220px));background-size: px2rem(232px 160px);background-position-x: 0; }
+
+      &>.crowd{ @include hbgImg($party_crowd, px2rem(300px)); }
+
+      &>.role-0{ @include hbgImg($party_role0, px2rem(339px));background-size: px2rem(81px 77px);background-position-x: px2rem(234px); }
+
+      &>.role-1{ @include hbgImg($party_role1, px2rem(298px));background-size: px2rem(54px 106px);background-position-x: px2rem(147px); }
+
+      &>.people-0{ @include hbgImg($party_people0, px2rem(333px));background-size: px2rem(104px 193px);background-position-x: px2rem(90px); }
+
+      &>.people-1{ @include hbgImg($party_people1, px2rem(337px));background-size: px2rem(89px 144px);background-position-x: px2rem(170px); }
+    }
+    &>.drag{ 
+      &{ @include hDrag($party_fan, px2rem(35px), px2rem(35px));z-index: $zIndex + 5;top: px2rem(230px);left: px2rem(310px); }
+
+      &>i{ border: 1px solid transparent;display: inline-block;position: absolute;bottom: px2rem(6px);left: px2rem(2px); }
+    }
+    &>.match{ position: absolute;border: 1px solid transparent;width: px2rem(35px);height: px2rem(35px);z-index: $zIndex + 5;top: px2rem(380px);left: px2rem(252px);@include backgroundImg($party_rect);background-size: 100% 100%; }
+  }
+
+  #country{
+    $zIndex: 100;
+    &{ z-index: $zIndex; }
+    img{ max-width: 100%; }
+
+    &>.text{
+      &{ position: absolute;top: px2rem(34px);left: px2rem(10px);z-index: 20; }
+      dl.animated{ animation-duration: 1s; }
+      dl>img{ width: 100%; }
+
+      dl:nth-of-type(1){ width: px2rem(189px);position: relative; }
+
+      dl:nth-of-type(2){ width: px2rem(189px);position: relative;top: px2rem(-10px); }
+
+      dl:nth-of-type(3){ width: px2rem(299px);position: relative;top: px2rem(-26px); }
+    }
+    &>.sky{
+      &{ @include hbgImg($country_sky); }
+      &>.land{ @include hbgImg($country_land, px2rem(187px)); }
+      &>.plane{ @include hbgImg($country_plane, px2rem(10px));background-size: px2rem(144px 66px);background-position-x: px2rem(24px); }
+    }
+    &>.sence{
+      &{ @include posFull(); }
+      &>.flag{ @include hbgImg($country_flag, px2rem(135px));background-size: px2rem(216px 221px);background-position-x: right; }
+
+      &>.door{ @include hbgImg($country_door, px2rem(77px));background-size: px2rem(288px 321px);background-position-x: left; }
+
+      &>.crowd{ @include hbgImg($country_crowd, px2rem(200px)); }
+      &>.role-0{
+        &{ position: absolute;top: px2rem(270px);left: px2rem(124px);z-index: $zIndex;width: px2rem(77px); height: px2rem(213px);@include backgroundImg($country_role0); }
+        &>img{ display: inline-block;position: absolute;top: px2rem(50px);right: px2rem(10px);width: px2rem(37px);height: px2rem(38px);transform-origin: px2rem(29px) px2rem(22px); }
+      }
+      &>.role-1{ 
+        &{ position: absolute;top: px2rem(290px);left: px2rem(202px);z-index: $zIndex;width: px2rem(73px); height: px2rem(207px);@include backgroundImg($country_role1); } 
+
+        img{ display: inline-block;position: absolute;bottom: px2rem(-8px);right: px2rem(8px);width: px2rem(29px);height: px2rem(65px);transform-origin: px2rem(8px) px2rem(6px);animation-duration: 0.4s }
+      }
+      &>.role-2{ @include hbgImg($country_role2, px2rem(318px));background-size: px2rem(60px 214px);background-position-x: px2rem(28px); }
+    }
+
+    &>.tip{
+      .flash.animated{ animation-duration: 1s; }
+      .denote{ position: absolute;top: px2rem(58px);left: px2rem(160px);z-index: $zIndex;@include backgroundImg($country_tip1);width: px2rem(74px);height: px2rem(41px); }
+
+      .arrow{ position: absolute;top: px2rem(154px);left: px2rem(180px);z-index: $zIndex;@include backgroundImg($country_tip2);width: px2rem(84px);height: px2rem(154px); }
+    }
+
+    #operate{
+      &>.mask{ z-index: $zIndex + 10; }
+      &>.operate{ z-index: $zIndex + 20; }
+    }
+
+    &>.drag{ @include hDrag($country_cane, px2rem(25px), px2rem(98px));z-index: $zIndex + 5;top: px2rem(56px);left: px2rem(258px); }
+
+    &>.match{ position: absolute;z-index: $zIndex + 5;top: px2rem(383px);left: px2rem(130px);width: px2rem(25px);height: px2rem(98px);@include backgroundImg($country_rect);background-size: 100% 100%; }
+  }
+
+  #summary{
+    $zIndex: 50;
+    &{ z-index: $zIndex;text-align: center;@include backgroundImg($operate_bg);background-size: 100% 100%; }
+    
+    img{ max-width: 100%; }
+    &>a{ display: inline-block;@include backgroundImg($operate_next);width: px2rem(112px);height: px2rem(60px);position: absolute;top: px2rem(15px);right: px2rem(19px); }
+    dl{
+      &{ margin-left: auto;margin-right: auto; }
+      &:nth-of-type(1){ margin-top: px2rem(96px);width: px2rem(285px); }
+      &:nth-of-type(2){ margin-top: px2rem(18px);width: px2rem(340px); }
+      &:nth-of-type(3){ margin-top: px2rem(15px);width: px2rem(327px); }
+    }
+  }
+
+  #end{
+    $zIndex: 40;
+    &{ z-index: $zIndex;text-align: center;@include backgroundImg($operate_bg);background-size: 100% 100%; }
+
+    img{ max-width: 100%; }
+    dl{
+      &{ margin-left: auto;margin-right: auto; }
+      &:nth-of-type(1){ position: absolute;top: px2rem(153px);right: px2rem(-18px);width: px2rem(302px); }
+      &:nth-of-type(2){ position: absolute;bottom: px2rem(20px);width: px2rem(197px);left: 50%;margin-left: px2rem(-99px); }
+      a{ display: inline-block;border: 1px solid transparent;width: px2rem(190px);height: px2rem(150px);position: absolute;top: 0;left: 0; }
+    }
+  }
+}

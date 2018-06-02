@@ -1,0 +1,5 @@
+@mixin hbgImg($url, $pos: top) {
+  @include posFull();@include backgroundImg($url, '100% auto');background-position-y: unquote($pos);
+}
+
+@mixin hDrag($url, $width, $height){ display: inline-block;width: $width;height: $height;@include backgroundImg($url);position: absolute; }

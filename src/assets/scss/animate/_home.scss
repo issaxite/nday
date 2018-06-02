@@ -1,0 +1,45 @@
+@keyframes textIn {
+  from {
+    opacity: 0;
+    bottom: px2rem(-30px);
+    // transform: translateY(30%);
+  }
+  to{
+    opacity: 1;
+    bottom: 0;
+    // transform: translateY(0%);
+  }
+}
+.textIn{ animation: textIn;position: relative; }
+
+@keyframes cLimbsSwing {
+  form, 50%, to{ transform: rotate(-3deg); }
+  25%{ transform: rotate(3deg); }
+  75%{ transform: rotate(-3deg); }
+}
+
+@keyframes pFanSwing {
+  form, 50%, to{ transform: rotate(-5deg); }
+  25%{ transform: rotate(5deg); }
+  75%{ transform: rotate(-5deg); }
+}
+
+@keyframes mBowSwig {
+  form, 50%, to{ transform: rotate(3deg); }
+  25%{ transform: rotate(-3deg); }
+  75%{ transform: rotate(3deg); }
+}
+
+@keyframes figerSwig {
+  form{ transform: rotate(0deg); }
+  50%{ transform: rotate(-20deg); }
+  to{ transform: rotate(0deg); }
+}
+
+.mBowSwig{ animation: mBowSwig;animation-timing-function: linear !important; }
+
+.cLimbsSwing{ animation: cLimbsSwing;animation-timing-function: linear !important; }
+
+.pFanSwing{ animation: pFanSwing;transform-origin: left bottom;animation-duration: 0.3s !important;animation-timing-function: linear !important; }
+
+.figerSwig{ animation: figerSwig;animation-timing-function: linear !important; }

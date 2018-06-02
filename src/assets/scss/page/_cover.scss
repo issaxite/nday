@@ -1,0 +1,38 @@
+#cover{
+  &{ overflow: hidden;display: flex;justify-content: center;align-items: center;background-image: url($operate_bg); }
+
+  &>#loading{
+    position: absolute;top: 0;right: 0;bottom: 0;left: 0;display: flex;justify-content: center;align-items: center;
+    background: url('http://sl-cdn.hingyin.com/o_1br8jcqiu1ru18fm1srf1otj6v37.png');
+    z-index: 1000;
+    // background-color: rgb(230, 196, 144);
+    img{ position: relative;top: px2rem(50px);width: px2rem(149px); }
+  }
+
+  &>.mask{
+    &{ background: black;opacity: 0;@include posFull(); }
+    &.reset{ transition: all 0.35s; }
+  }
+  &>.item{ @include routerPos();box-shadow: 0 0 3px rgb(180, 180, 180);overflow: auto;-webkit-overflow-scrolling: touch; }
+  .animated{ animation-duration: 0.35s; }
+
+  .lighter{
+    &{ width: px2rem(116px);position: absolute;top: px2rem(-2px);left: 50%;margin-left: px2rem(-58px);@include img-opacity-transition(); }
+    &.animated{ animation-duration: 2s; }
+    img{ width: 100%; }
+  }
+  &>.text{ 
+    &{ text-align: center; }
+    img{ height: px2rem(73px); }
+  }
+  .hand{
+    &{ position: absolute;width: 100%;left: 0;bottom: px2rem(-660px);@include img-opacity-transition(); }
+    &.reset{ transition: all 0.35s ease-in-out; }
+    &>dl{ width: px2rem(145px);margin: auto; }
+    img{ width: 100%; }
+  }
+  &.finish{
+    .lighter, .hand{ opacity: 0; }
+    // .hand{ transition: bottom 0.35s ease-in-out; }
+  }
+}

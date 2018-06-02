@@ -1,0 +1,18 @@
+#cover{
+  @keyframes swingBig {
+    0% {
+      transform: rotate3d(0, 0, 1, 16deg);
+    }
+    50% {
+      transform: rotate3d(0, 0, 1, -16deg);
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 16deg);
+    }
+  }
+
+  .swingBig {
+    transform-origin: top center;
+    animation-name: swingBig;
+  }
+}
