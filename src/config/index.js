@@ -1,4 +1,4 @@
 export default {
-  env: "development",
+  env: "production",
   apiDomain: "",
 }
