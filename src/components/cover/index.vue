@@ -9,7 +9,7 @@
       <img :src="text1">
     </div>
     <div class="hand" v-show="!isLoading">
-      <dl @touchstart="dragHandStart" @touchmove="dragHandMove" @touchend="dragHandEnd"><img src="'@static/image/o_1br8pvkht1697lte17ktljf1g4uh.png'"></dl>
+      <dl @touchstart="dragHandStart" @touchmove="dragHandMove" @touchend="dragHandEnd"><img :src="handImg"></dl>
     </div>
   </div>
 </template>
@@ -137,12 +137,12 @@ export default {
   data() {
     return {
       rem: 37.5,
-      text0: '~/o_1br8q2e3e445e9b13j71cmfeus10.png', 
-      text1: '~/o_1br8q36pe1fltn5s1j3jfr3192t15.png',
+      text0: 'http://sl-cdn.hingyin.com/o_1br8q2e3e445e9b13j71cmfeus10.png', 
+      text1: 'http://sl-cdn.hingyin.com/o_1br8q36pe1fltn5s1j3jfr3192t15.png',
       isLoading: true,
       isCash: false,
-      lighterImg: '~/o_1br8q0ksp16vo1jc81r3v47sbnom.png',
-      handImg: '~/o_1br8pvkht1697lte17ktljf1g4uh.png',
+      lighterImg: 'http://sl-cdn.hingyin.com/o_1br8q0ksp16vo1jc81r3v47sbnom.png',
+      handImg: 'http://sl-cdn.hingyin.com/o_1br8pvkht1697lte17ktljf1g4uh.png',
       handDom: null,
       handHeight: 0,
       inithandBottom: '-660',

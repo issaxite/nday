@@ -4,7 +4,7 @@ var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-
+var fs = require('fs')
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
@@ -66,11 +66,15 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
-
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve
-})
+});
+var resolveDir = dir => path.join(__dirname, '..', dir);
+var configDir = resolveDir('src/config');
+var customConfig = fs.readFileSync(`${configDir}/dev.js`, 'utf-8');
+
+fs.writeFileSync(`${configDir}/index.js`, customConfig);
 
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
@@ -81,6 +85,8 @@ devMiddleware.waitUntilValid(() => {
   }
   _resolve()
 })
+
+
 
 var server = app.listen(port)
 

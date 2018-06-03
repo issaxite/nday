@@ -2,6 +2,7 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
+var fs = require('fs')
 var ora = require('ora')
 var rm = require('rimraf')
 var path = require('path')
@@ -10,8 +11,14 @@ var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
 
+var resolveDir = dir => path.join(__dirname, '..', dir);
+var configDir = resolveDir('src/config');
+var customConfig = fs.readFileSync(`${configDir}/prod.js`, 'utf-8');
+
 var spinner = ora('building for production...')
 spinner.start()
+
+fs.writeFileSync(`${configDir}/index.js`, customConfig);
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
